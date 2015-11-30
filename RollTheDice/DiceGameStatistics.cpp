@@ -1,6 +1,6 @@
 /* 
  * File:   DiceGameStatistics.cpp
- * Author: Teri
+ * Author: Terianne Bolding
  * 
  * Created on November 30, 2015, 12:57 PM
  */

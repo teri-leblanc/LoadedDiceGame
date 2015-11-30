@@ -52,22 +52,31 @@ And then at the end a summary:
  * 
  * 
  * 
- * NOTE:: I created this project with the idea of creating a dice game. The Die abstraction could be 
+ * NOTES:: 
  * 
+ * -----Die
+ * I created this project with the idea of creating a dice game. The Die abstraction could be used to implement any
+ * form of dice. 
+ * Not limited to 6 sides
  * 
+ * -----LoadedDice
+ * Inherits Die and adds fields to keep track of the loaded side of the die. It also calculates the weight of each side
+ * Not limited to 6 sides
  * 
+ * -----DiceGameStatistics
+ * Keeps track of the number of times each side of a specific side lands up and calculates the percentages based on a number of rolls
+ * Not limited to 6 sides
  * 
+ * -----LoadedDiceGame
+ * This game is limited to 2, 6 sided dice. This class takes a filename and reads data from that file. It then rolls the two dice
+ * a given number of times and prints out each throw. It then prints out the statistical data about the overall rolls.
  * 
  */
 
 #include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include "Die.h"
 #include "LoadedDie.h"
 #include "LoadedDiceGame.h"
-#include <string>
 using namespace std;
 
 int main(int argc, char** argv) {

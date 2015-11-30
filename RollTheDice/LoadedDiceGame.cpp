@@ -1,6 +1,6 @@
 /* 
  * File:   RollDice.cpp
- * Author: Teri
+ * Author: Terianne Bolding
  * 
  * Created on November 21, 2015, 1:42 PM
  */
@@ -34,9 +34,9 @@ void LoadedDiceGame::MakeRolls(){
     int side2;
     for(int i =0; i < numberRolls; i++){
         side1 = Roll(die1);
-        statsDie1->AddRoll(side1);              // Add roll result to statistics object for die1
+        statsDie1->AddRoll(side1);                      // Add roll result to statistics object for die1
         side2 = Roll(die2);
-        statsDie2->AddRoll(side2);              // Add roll result to statistics object for die2
+        statsDie2->AddRoll(side2);                      // Add roll result to statistics object for die2
         cout<<"Throw "<<i+1<<": "<<die1->identifier<<" rolled a "<<side1<<", "<<die2->identifier<<" rolled a "<<side2 <<"\n";
     }
 
@@ -60,9 +60,9 @@ int LoadedDiceGame::Roll(const Die * dice){
 }
 
 void LoadedDiceGame::ReadData(){
-    ifstream diceFile;                  // file input stream
-    string data[7];                     // Array to capture data from file                 
-    diceFile.open(fileName);            // Open file input stream
+    ifstream diceFile;                                  // file input stream
+    string data[7];                                     // Array to capture data from file                 
+    diceFile.open(fileName);                            // Open file input stream
     int count = 0;
     if (diceFile.is_open()) {
         while (count < 8) {

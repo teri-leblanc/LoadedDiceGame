@@ -1,6 +1,6 @@
 /* 
  * File:   RollDice.h
- * Author: Teri
+ * Author: Terianne Bolding
  *
  * Created on November 21, 2015, 1:42 PM
  * 

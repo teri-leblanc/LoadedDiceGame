@@ -1,6 +1,6 @@
 /* 
  * File:   LoadedDie.cpp
- * Author: Teri
+ * Author: Terianne Bolding
  * 
  * Created on November 21, 2015, 1:03 PM
  */
@@ -19,7 +19,6 @@ LoadedDie::LoadedDie(const LoadedDie& orig) {
 LoadedDie::~LoadedDie() {
 
 }
-
 void LoadedDie::calculateDieProbabilites(){
     for(int i=0; i<6; i++)  {
         if(loadedSide == (i+1)){

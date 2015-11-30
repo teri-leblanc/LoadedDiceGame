@@ -1,6 +1,6 @@
 /* 
  * File:   LoadedDie.h
- * Author: Teri
+ * Author: Terianne Bolding
  *
  * Created on November 21, 2015, 1:03 PM
  * 
