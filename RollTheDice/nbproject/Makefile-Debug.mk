@@ -35,9 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/DiceGameStatistics.o \
 	${OBJECTDIR}/Die.o \
+	${OBJECTDIR}/LoadedDiceGame.o \
 	${OBJECTDIR}/LoadedDie.o \
-	${OBJECTDIR}/RollDice.o \
 	${OBJECTDIR}/main.o
 
 
@@ -65,20 +66,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rollthedice: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rollthedice ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/DiceGameStatistics.o: DiceGameStatistics.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DiceGameStatistics.o DiceGameStatistics.cpp
+
 ${OBJECTDIR}/Die.o: Die.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Die.o Die.cpp
 
+${OBJECTDIR}/LoadedDiceGame.o: LoadedDiceGame.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LoadedDiceGame.o LoadedDiceGame.cpp
+
 ${OBJECTDIR}/LoadedDie.o: LoadedDie.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LoadedDie.o LoadedDie.cpp
-
-${OBJECTDIR}/RollDice.o: RollDice.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RollDice.o RollDice.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -3,6 +3,9 @@
  * Author: Teri
  *
  * Created on November 21, 2015, 1:03 PM
+ * 
+ * 
+ * This class represents a die with a single loaded side. This die can also have greater or fewer
  */
 
 #ifndef LOADEDDIE_H
@@ -16,7 +19,7 @@ protected:
     int loadedSide;
 public:
     LoadedDie();
-    LoadedDie(const int _loadAmount, const int _loadedSide, const string _identifier);
+    LoadedDie(const int _loadAmount, const int _loadedSide, const string _identifier,const int _numberSides);
     LoadedDie(const LoadedDie& orig);
     virtual void calculateDieProbabilites();
     virtual ~LoadedDie();

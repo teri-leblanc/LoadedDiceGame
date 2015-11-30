@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Teri
+ * Author: Terianne LeBlanc Bolding
  *
  * Created on November 20, 2015, 11:23 AM
  * 
@@ -52,7 +52,7 @@ And then at the end a summary:
  * 
  * 
  * 
- * 
+ * NOTE:: I created this project with the idea of creating a dice game. The Die abstraction could be 
  * 
  * 
  * 
@@ -66,16 +66,12 @@ And then at the end a summary:
 #include <vector>
 #include "Die.h"
 #include "LoadedDie.h"
-#include "RollDice.h"
+#include "LoadedDiceGame.h"
 #include <string>
 using namespace std;
 
-/*
- * 
- */
 int main(int argc, char** argv) {
-
-    RollDice* dice = new RollDice("diceData.txt");
+    LoadedDiceGame* dice = new LoadedDiceGame("diceData.txt");
     dice->MakeRolls();
     delete dice;
     return 0;

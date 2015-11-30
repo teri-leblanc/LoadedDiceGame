@@ -1,7 +1,10 @@
-build/Debug/GNU-MacOSX/main.o: main.cpp Die.h LoadedDie.h RollDice.h
+build/Debug/GNU-MacOSX/main.o: main.cpp Die.h LoadedDie.h \
+  LoadedDiceGame.h DiceGameStatistics.h
 
 Die.h:
 
 LoadedDie.h:
 
-RollDice.h:
+LoadedDiceGame.h:
+
+DiceGameStatistics.h:

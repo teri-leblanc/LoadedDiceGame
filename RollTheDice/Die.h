@@ -12,20 +12,19 @@
 using namespace std;
 
 class Die {
-    friend class RollDice;
+    friend class LoadedDiceGame;
 protected:
-    string identifier;
+    int possibilites;               // Number of statistical possibilities for the dies sides
+    double* DieSides;               // Array to hold weight of each side of the die
+    
     virtual void calculateDieProbabilites() = 0;
 public:
-    int possibilites;
-    double DieSides[6];
+    string identifier;              // Name of the die
+    int numberSides;                // Number of sides the die has, certain die can contain greater then 6 sides
     Die();
     Die(const Die& orig);
-    Die(int _possibilites, string _identifier);
+    Die(int _possibilites, string _identifier, int _numberSides);
     virtual ~Die();
-    
-
-
 };
 
 #endif	/* DIE_H */

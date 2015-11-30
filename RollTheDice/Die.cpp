@@ -8,11 +8,14 @@
 #include "Die.h"
 #include <iostream>
 Die::Die():possibilites(6){}
-Die::Die(int _possibilites, string _identifier):possibilites(_possibilites), identifier(_identifier){}
-Die::Die(const Die& orig) {
+Die::Die(int _possibilites, string _identifier, int _numberSides):possibilites(_possibilites), identifier(_identifier),numberSides(_numberSides){
+    DieSides = new double[numberSides];
+    if (_numberSides <2) numberSides = 2;
+    
 }
-
-
+Die::Die(const Die& orig) {
+    delete DieSides;
+}
 Die::~Die() {
 }
 
