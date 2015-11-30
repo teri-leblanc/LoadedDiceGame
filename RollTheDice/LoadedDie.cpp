@@ -1,6 +1,6 @@
 /* 
  * File:   LoadedDie.cpp
- * Author: Terianne Bolding
+ * Author: Terianne Boldin
  * 
  * Created on November 21, 2015, 1:03 PM
  */
@@ -10,7 +10,7 @@
 #include <stdlib.h>
 LoadedDie::LoadedDie() {
 }
-LoadedDie::LoadedDie(const int _loadAmount, const int _loadedSide, const string _identifier, const int _numberSides):loadAmount(_loadAmount),loadedSide(_loadedSide), Die((_loadAmount+_numberSides),_identifier, _numberSides) {
+LoadedDie::LoadedDie(const int _loadAmount, const int _loadedSide, const string _identifier, const int _numberSides):loadAmount(_loadAmount),loadedSide(_loadedSide), Die((_loadAmount+(_numberSides-1)),_identifier, _numberSides) {
     calculateDieProbabilites();
 }
 LoadedDie::LoadedDie(const LoadedDie& orig) {
