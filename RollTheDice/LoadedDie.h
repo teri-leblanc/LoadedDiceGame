@@ -19,11 +19,12 @@ public:
     LoadedDie();
     LoadedDie(const int _loadAmount, const int _loadedSide, const std::string &_identifier,const int _numberSides);
     LoadedDie(const LoadedDie& orig);
-    virtual void CalculateDieProbabilites();
     virtual ~LoadedDie();
-private:
+protected:
     int loadAmount;
     int loadedSide;
+private:
+    virtual void CalculateDieProbabilites();
 };
 
 #endif	/* LOADEDDIE_H */
