@@ -19,9 +19,11 @@ public:
     Die(int _possibilites, std::string _identifier, int _numberSides);
     Die(const Die& orig);
     virtual ~Die();
+    virtual int Roll() const;
 protected:
     int possibilites;                   // Number of statistical possibilities for the dies sides
-    virtual void calculateDieProbabilites() = 0;
+    virtual void CalculateDieProbabilites() = 0;
+
 };
 
 #endif	/* DIE_H */

@@ -33,9 +33,9 @@ void LoadedDiceGame::MakeRolls(){
     int side1;
     int side2;
     for(int i =0; i < numberRolls; i++){
-        side1 = Roll(die1);
+        side1 = die1->Roll();
         statsDie1->AddRoll(side1);                      // Add roll result to statistics object for die1
-        side2 = Roll(die2);
+        side2 = die2->Roll();
         statsDie2->AddRoll(side2);                      // Add roll result to statistics object for die2
         cout<<"Throw "<<i+1<<": "<<die1->identifier<<" rolled a "<<side1<<", "<<die2->identifier<<" rolled a "<<side2 <<"\n";
     }
@@ -46,19 +46,6 @@ void LoadedDiceGame::MakeRolls(){
     statsDie2->PrintRollStatistics();                   // Print Statistical Percentages of all rolls for die2
 }
     
-int LoadedDiceGame::Roll(const Die * dice){
-
-    float val = (rand()%10000)*.0001;
-    int side;
-    if (val < dice->DieSides[0]) side = 1;
-    else if (val < dice->DieSides[0]+dice->DieSides[1]) side = 2;
-    else if (val < dice->DieSides[0]+dice->DieSides[1]+dice->DieSides[2]) side = 3;
-    else if (val < dice->DieSides[0]+dice->DieSides[1]+dice->DieSides[2]+dice->DieSides[3]) side = 4;
-    else if (val < dice->DieSides[0]+dice->DieSides[1]+dice->DieSides[2]+dice->DieSides[3]+dice->DieSides[4]) side = 5;
-    else side = 6;
-    return side;
-}
-
 void LoadedDiceGame::ReadData(){
     ifstream diceFile;                                  // file input stream
     string data[7];                                     // Array to capture data from file                 

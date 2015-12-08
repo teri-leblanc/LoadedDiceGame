@@ -24,8 +24,7 @@ protected:
     int loadAmount;
     int loadedSide;
 private:
-    virtual void calculateDieProbabilites();
-
+    virtual void CalculateDieProbabilites();
 };
 
 #endif	/* LOADEDDIE_H */

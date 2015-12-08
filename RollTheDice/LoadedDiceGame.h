@@ -38,7 +38,6 @@ private:
     Die* die1;                                  // Physical representation of die1
     Die* die2;                                  // Physical representation of die2
     void ReadData();                            // Reads data from fileName and puts it in gameData map
-    int Roll(const Die* dice);                  // Rolls an individual die once
 };
 
 #endif	/* ROLLDICE_H */

@@ -24,4 +24,14 @@ Die::~Die() {
     delete[] DieSides;
 }
 
+int Die::Roll() const{
+    float val = (rand()%10000)*.0001;
+    double comparisonValue = 0.0;
+    for(int i=0; i<numberSides; i++){
+        comparisonValue += DieSides[i];
+        if(val < comparisonValue) return i+1;
+    }
+    return 0;
 
+
+}
