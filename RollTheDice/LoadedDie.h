@@ -14,16 +14,17 @@
 
 class LoadedDie: public Die {
     
+
+public:
+    LoadedDie();
+    LoadedDie(const int _loadAmount, const int _loadedSide, const std::string &_identifier,const int _numberSides);
+    LoadedDie(const LoadedDie& orig);
+    virtual ~LoadedDie();
 protected:
     int loadAmount;
     int loadedSide;
-public:
-    LoadedDie();
-    LoadedDie(const int _loadAmount, const int _loadedSide, const string _identifier,const int _numberSides);
-    LoadedDie(const LoadedDie& orig);
+private:
     virtual void calculateDieProbabilites();
-    virtual ~LoadedDie();
-
 
 };
 

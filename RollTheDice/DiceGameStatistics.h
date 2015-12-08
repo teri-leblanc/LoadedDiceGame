@@ -13,19 +13,16 @@
 #define	DICEGAMESTATISTICS_H
 #include "Die.h"
 #include "LoadedDie.h"
-#include <map>
 #include <cstdlib>
-#include <string>
+
 class DiceGameStatistics {
 public:
     DiceGameStatistics(const Die* _dice, int _numberRolls);
-
     DiceGameStatistics(const DiceGameStatistics& orig);
     virtual ~DiceGameStatistics();
     void AddRoll(int side);
     void CalculateRollPercent();
     void PrintRollStatistics();
-    
 private:
     const Die* dice;                                    // Die calculating data for
     int* rollPercent;                                   // Array to hold the amount of times a side has been rolled

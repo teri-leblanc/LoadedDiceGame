@@ -11,14 +11,14 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+
+using namespace std;
+
 LoadedDiceGame::LoadedDiceGame(string _fileName) : fileName(_fileName) {
     ReadData();
     statsDie1 = new DiceGameStatistics(die1,numberRolls);   // Create statistical tracking object for die1
     statsDie2 = new DiceGameStatistics(die2,numberRolls);   // Create statistical tracking object for die2
     
-}
-
-LoadedDiceGame::LoadedDiceGame(const LoadedDiceGame& orig) {
 }
 
 LoadedDiceGame::~LoadedDiceGame(){
