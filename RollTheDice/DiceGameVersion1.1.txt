@@ -1,0 +1,35 @@
+Terianne Bolding
+December 2015
+
+Spectra Logic
+
+Dice Game
+___
+Notes On Revision 1
+________________
+
+
+main.cpp
+Allocate to the stack when you do not need the object to last beyond the functions scope that the object has been declared in. Given that the LoadedDiceGame is declared in main it will live for the entire length of the program execution. 
+This change has been reflected in the code.
+Die.h
+Putting a using namespace std in .h was dangerous because if someone includes my .h file into their new program this can completely change the meaning of their code because of conflicting namespaces.
+This change has been reflected in the code
+Die.cpp
+1. delete vs delete[]
+   1. delete is for scalar and delete[] is for array
+   2. calling delete[] on an array with elements not initialized is dangerous
+1. Default Constructors
+   1. I decided it doesn’t make sense to have a default constructor for any of the game classes. I could have a default constructor for the die class and set it to the normal 6 sided even Die but I’m not sure if this is a good idea or not.
+1. Copy Constructors
+   1. I have decided it only makes sense to have copy constructors for the die and LoadedDie classes not for the games. 
+These changes have been reflected in the code
+1. initializing array before knowing final number of sides
+If the numberSides variable happened to be less in then 2 and I assigned this variable to 2 then the array needed to be used for the rest of the program would be initialized incorrectly. The code was rearranged to check this value before initializing anything.
+This change has been reflected in the code.
+1. const ref for string identifiers
+I need better understanding of C++ pass by reference. Especially when it comes to storing that reference in class variables.
+This change has not been reflected in the code
+Alternative Design Consideration
+I have changed the die.h class to include an int virtual Roll() const function. This function simulates the roll of single die depending upon how many sides it has. This leaves room for other classes to overload this method if they would like to change what rolling a die means.
+This change has been reflected in the code
