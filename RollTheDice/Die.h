@@ -13,17 +13,15 @@
 class Die {
 public:
     std::string identifier;              // Name of the die
-    int numberSides;                     // Number of sides the die has, certain die can contain greater then 6 sides
     double* DieSides;                    // Array to hold weight of each side of the die
-    Die();
-    Die(int _possibilites, std::string _identifier, int _numberSides);
+    Die(std::string _identifier, int _numberSides);
     Die(const Die& orig);
+    int GetNumberSides() const;          // Getter for numberSides - this initial value should never change
     virtual ~Die();
     virtual int Roll() const;
+    virtual void CalculateDieProbabilites();
 protected:
-    int possibilites;                   // Number of statistical possibilities for the dies sides
-    virtual void CalculateDieProbabilites() = 0;
-
+    int numberSides;
 };
 
 #endif	/* DIE_H */

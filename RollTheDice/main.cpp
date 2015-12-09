@@ -82,6 +82,7 @@ using namespace std;
 int main(int argc, char** argv) {
     LoadedDiceGame dice = LoadedDiceGame("/Users/Teri/NetBeansProjects/LoadedDiceGame/RollTheDice/diceData.txt");
     dice.MakeRolls();
+
     return 0;
 }
 

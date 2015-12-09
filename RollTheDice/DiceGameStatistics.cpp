@@ -6,34 +6,37 @@
  */
 
 #include "DiceGameStatistics.h"
+#include "LoadedDiceGame.h"
+#include <math.h>
 #include <random>
 #include <iostream>
+#include <fstream>
+#include <stdlib.h>
 
 using namespace std;
 
-DiceGameStatistics::DiceGameStatistics(const Die &_dice): dice(_dice) {
-    rollPercent.assign(dice.GetNumberSides(),0);
-    numberRolls = 0;
+DiceGameStatistics::DiceGameStatistics(const Die* _dice, int _numberRolls): dice(_dice), numberRolls(_numberRolls) {
+    rollPercent = new int[dice->GetNumberSides()];
+    for(int i=0; i<dice->GetNumberSides();i++) rollPercent[i] = 0;
 }
 
 DiceGameStatistics::~DiceGameStatistics() {
-
+    delete[] rollPercent;
 }
 
 void DiceGameStatistics::AddRoll(int side){
     rollPercent[side-1]++;
-    numberRolls++;
 }
 
 void DiceGameStatistics::CalculateRollPercent(){
-    for(int i=0; i< dice.GetNumberSides(); i++)  {
+    for(int i=0; i< dice->GetNumberSides(); i++)  {
         rollPercent[i] = ((double)rollPercent[i]/numberRolls)*100;
     }
 }
 
 void DiceGameStatistics::PrintRollStatistics(){
-    cout<< "\n"<< dice.identifier<<" Statistics for "<<numberRolls<<" rolls: \n";
-    for(int i=0; i<rollPercent.size(); i++)  {
+    cout<< "\n"<< dice->identifier<<" Statistics for "<<numberRolls<<" rolls: \n";
+    for(int i=0; i<dice->GetNumberSides(); i++)  {
         cout<<"Side "<<i+1<<": "<<rollPercent[i]<<"%\n";
         
     }
