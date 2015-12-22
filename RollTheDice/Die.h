@@ -9,18 +9,20 @@
 #define	DIE_H
 #include <cstdlib>
 #include <string>
+#include <vector>
 
 class Die {
 public:
-    std::string identifier;              // Name of the die
-    double* DieSides;                    // Array to hold weight of each side of the die
     Die(std::string _identifier, int _numberSides);
+    Die();
     Die(const Die& orig);
-    int GetNumberSides() const;          // Getter for numberSides - this initial value should never change
     virtual ~Die();
-    virtual int Roll() const;
+    int Roll() const;
     virtual void CalculateDieProbabilites();
-protected:
+    std::string identifier;                          // Name of the die
+    std::vector<double> DieSides;                    // Array to hold weight of each side of the die
+    int GetNumberSides() const;                      // Getter for numberSides - this initial value should never change
+private:
     int numberSides;
 };
 

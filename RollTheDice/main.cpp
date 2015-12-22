@@ -75,14 +75,12 @@ And then at the end a summary:
 
 #include <cstdlib>
 #include "Die.h"
-#include "LoadedDie.h"
 #include "LoadedDiceGame.h"
-#include <stdlib.h>
-#include <iostream>
+
 using namespace std;
 
 int main(int argc, char** argv) {
-    LoadedDiceGame dice = LoadedDiceGame("diceData.txt");
+    LoadedDiceGame dice = LoadedDiceGame("/Users/Teri/NetBeansProjects/LoadedDiceGame/RollTheDice/diceData.txt");
     dice.MakeRolls();
 
     return 0;

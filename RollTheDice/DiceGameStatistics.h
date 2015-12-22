@@ -14,18 +14,19 @@
 #include "Die.h"
 #include "LoadedDie.h"
 #include <cstdlib>
+#include <vector>
 
 class DiceGameStatistics {
 public:
-    DiceGameStatistics(const Die* _dice, int _numberRolls);
+    DiceGameStatistics(const Die &_dice);
     DiceGameStatistics(const DiceGameStatistics& orig);
     virtual ~DiceGameStatistics();
     void AddRoll(int side);
     void CalculateRollPercent();
     void PrintRollStatistics();
 private:
-    const Die* dice;                                    // Die calculating data for
-    int* rollPercent;                                   // Array to hold the amount of times a side has been rolled
+    const Die &dice;                                    // Die calculating data for
+    std::vector<int> rollPercent;                       // vectorn to hold the amount of times a side has been rolled
     int numberRolls;                                    // Number of rolls in the game
 
 };

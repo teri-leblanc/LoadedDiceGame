@@ -1,5 +1,5 @@
 /* 
- * File:   RollDice.h
+ * File:   LoadedDiceGame.h
  * Author: Terianne Bolding
  *
  * Created on November 21, 2015, 1:42 PM
@@ -34,9 +34,9 @@ private:
     int numberRolls;                            // Number of times to roll dice
     DiceGameStatistics* statsDie1;              // Statistical object for die1
     DiceGameStatistics* statsDie2;              // Statistical object for die2
-    std::string fileName;                            // file to open and read data from
-    Die* die1;                                  // Physical representation of die1
-    Die* die2;                                  // Physical representation of die2
+    std::string fileName;                       // file to open and read data from
+    Die die1;                                   // Physical representation of die1
+    Die die2;                                   // Physical representation of die2
     void ReadData();                            // Reads data from fileName and puts it in gameData map
 };
 
