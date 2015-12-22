@@ -21,7 +21,7 @@ public:
     LoadedDie(const LoadedDie& orig);
     virtual void CalculateDieProbabilites();
     virtual ~LoadedDie();
-protected:
+private:
     int loadAmount;
     int loadedSide;
 };

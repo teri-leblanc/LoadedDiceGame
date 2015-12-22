@@ -26,7 +26,7 @@ public:
     void PrintRollStatistics();
 private:
     const Die &dice;                                    // Die calculating data for
-    std::vector<int> rollPercent;                       // vectorn to hold the amount of times a side has been rolled
+    std::vector<int> rollPercent;                       // vector to hold the amount of times a side has been rolled
     int numberRolls;                                    // Number of rolls in the game
 
 };

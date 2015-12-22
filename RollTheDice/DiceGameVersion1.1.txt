@@ -33,3 +33,25 @@ This change has not been reflected in the code
 Alternative Design Consideration
 I have changed the die.h class to include an int virtual Roll() const function. This function simulates the roll of single die depending upon how many sides it has. This leaves room for other classes to overload this method if they would like to change what rolling a die means.
 This change has been reflected in the code
+
+Notes On Revision 1
+________________
+Die.cpp
+CalculateDieProbabilities
+Probabilities are now being calculated when the Die constructor is called.
+Default Constructors
+After refactoring the code to utilize references, i decided to allow for a default die object that is fully functional with 6 sides.
+DieSides *[] into vector<> DieSides
+Changing DieSides from a basic array into a vector allowed the Die class to behave in a safer way when dealing with this data structure. Initialization of size is no longer required and it allows for a built in way to keep track of the actual number of elements in the container.
+These changes have been reflected in the code
+DieGameStatistics
+rollPercent[] into vector<> rollPercent
+Changing this into a vector allowed for the removal of numberRolls from the constructor. The numberRolls is now calculated based on the number of times addRoll is called. This eliminates any bugs regarding numberRolls being an invalid number or not coinciding with the actual statistics collected for each roll.
+Constructor
+The constructor now takes in a const reference of a Die rather than a pointer.
+
+
+LoadedDiceGame
+This game no longer uses raw pointers for the Die objects. This allows for the Die objects to be passed as references.
+
+These changes have been reflected in the code

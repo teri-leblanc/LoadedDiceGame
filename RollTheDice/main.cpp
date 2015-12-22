@@ -80,7 +80,7 @@ And then at the end a summary:
 using namespace std;
 
 int main(int argc, char** argv) {
-    LoadedDiceGame dice = LoadedDiceGame("/Users/Teri/NetBeansProjects/LoadedDiceGame/RollTheDice/diceData.txt");
+    LoadedDiceGame dice = LoadedDiceGame("diceData.txt");
     dice.MakeRolls();
 
     return 0;

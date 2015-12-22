@@ -7,7 +7,6 @@
 
 #include "LoadedDie.h"
 #include <iostream>
-#include <stdlib.h>
 
 using namespace std;
 
@@ -22,11 +21,11 @@ LoadedDie::LoadedDie(const LoadedDie& orig):Die(orig){
 LoadedDie::~LoadedDie() {
 }
 void LoadedDie::CalculateDieProbabilites(){
-    for(int i=0; i<numberSides; i++)  {
+    for(int i=0; i<Die::GetNumberSides(); i++)  {
         if(loadedSide == (i+1)){
-           Die::DieSides[i] = ((double)loadAmount/(double)(loadAmount + (numberSides-1))); // Loaded side has a higher probability
+           Die::DieSides[i] = ((double)loadAmount/(double)(loadAmount + (Die::GetNumberSides()-1))); // Loaded side has a higher probability
         }
        else
-           Die::DieSides[i] = ((double)1/(double)(loadAmount + (numberSides-1)));          // Non loaded sides have same probability
+           Die::DieSides[i] = ((double)1/(double)(loadAmount + (Die::GetNumberSides()-1)));          // Non loaded sides have same probability
     }
 }
